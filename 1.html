@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function copyText()
+{
+var radios = document.getElementsByClassName("radios");
+var scores = 0;
+for(var i=0;i<radios.length;i++){
+var fruit = document.getElementsByName("Fruit" + (i+1));
+for(var j=0;j<fruit.length;j++){
+if(fruit[j].checked){
+scores += fruit[j].value * 1;
+break;
+}
+}
+}
+document.getElementById("score").value=scores;
+}
+</script>
+</head>
+<body>
+<div class="radios">
+您最喜欢水果？<br /><br />
+<label><input name="Fruit1" type="radio" value="1" />苹果 </label>
+<label><input name="Fruit1" type="radio" value="2" />桃子 </label>
+<label><input name="Fruit1" type="radio" value="3" />香蕉 </label>
+<label><input name="Fruit1" type="radio" value="4" />梨 </label>
+<label><input name="Fruit1" type="radio" value="5" />其它 </label>
+</div>
+<div class="radios">
+您最喜欢水果？<br /><br />
+<label><input name="Fruit2" type="radio" value="1" />苹果 </label>
+<label><input name="Fruit2" type="radio" value="2" />桃子 </label>
+<label><input name="Fruit2" type="radio" value="3" />香蕉 </label>
+<label><input name="Fruit2" type="radio" value="4" />梨 </label>
+<label><input name="Fruit2" type="radio" value="5" />其它 </label>
+</div>
+<div class="radios">
+您最喜欢水果？<br /><br />
+<label><input name="Fruit3" type="radio" value="1" />苹果 </label>
+<label><input name="Fruit3" type="radio" value="2" />桃子 </label>
+<label><input name="Fruit3" type="radio" value="3" />香蕉 </label>
+<label><input name="Fruit3" type="radio" value="4" />梨 </label>
+<label><input name="Fruit3" type="radio" value="5" />其它 </label>
+</div>
+<div class="radios">
+您最喜欢水果？<br /><br />
+<label><input name="Fruit4" type="radio" value="1" />苹果 </label>
+<label><input name="Fruit4" type="radio" value="2" />桃子 </label>
+<label><input name="Fruit4" type="radio" value="3" />香蕉 </label>
+<label><input name="Fruit4" type="radio" value="4" />梨 </label>
+<label><input name="Fruit4" type="radio" value="5" />其它 </label>
+</div>
+<div class="radios">
+您最喜欢水果？<br /><br />
+<label><input name="Fruit5" type="radio" value="1" />苹果 </label>
+<label><input name="Fruit5" type="radio" value="2" />桃子 </label>
+<label><input name="Fruit5" type="radio" value="3" />香蕉 </label>
+<label><input name="Fruit5" type="radio" value="4" />梨 </label>
+<label><input name="Fruit5" type="radio" value="5" />其它 </label>
+</div>
+成绩: <input type="text" id="score"><br/><br/>
+<button onclick="copyText()">复制文本</button>
+<p>当按钮被单击时触发函数。此函数把文本从 Field1 复制到 Field2 中。</p>
+</body>
+</html>

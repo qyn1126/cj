@@ -1,0 +1,19 @@
+{% if latest_question_list %}
+    <ul>
+<form action="{% url 'polls:vote'%}" method="post">
+    {% csrf_token %}"
+        {% for question in latest_question_list %}
+            <li><a >{{ question.question_text }}</a></li>
+            {% for choice in question.choice_set.all %}
+            <input type="radio" checked="checked" name={{ question.question_text }} id="choice  {{ forloop.counter }}" value="{{ choice.votes }}" />
+            <label for="choice {{ forloop.counter }}" required>{{ choice.choice_text }}</label><br />
+            {% endfor %}
+        {% endfor %}
+    名字: <input type="text"  name="firstname" required><br>
+    邮箱: <input type="email" name="lastname" required>
+    <input type="submit" value="submit">
+</form>
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
