@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ f.questionaire_text }}</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+ {% csrf_token %}
+ <table class="table table-bordered">
+	<caption>获奖名单</caption>
+	<thead>
+		<tr>
+			<th>手机尾号</th>
+            <th>奖品</th>
+		</tr>
+	</thead>
+ <tbody>
+{% for answer in f %}
+　　     <tr>
+			<td>{{ answer.answer_phonenumber }}</td>
+			<td>{{ answer.answer_drawn }}</td>
+
+		</tr>
+        {% endfor %}
+ </tbody>
+    </table>
