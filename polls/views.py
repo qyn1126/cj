@@ -61,7 +61,7 @@ def vote(request):
     q = answer(questionaire_id=aire, answer_name=request.POST['firstname'], answer_email=request.POST['email'], answer_number=num, answer_choice=s, answer_phonenumber=f )
     q.save()
 
-    return HttpResponse(s)
+    return HttpResponse('感谢您的参与')
 
 def rank1(request):
     a=(int(request.POST['j1']),int(request.POST['j2']),int(request.POST['j3']))

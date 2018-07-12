@@ -9,7 +9,7 @@ def drawn(request,question_id):
     if timezone.now()<f.end_time:
         return HttpResponse('还没开始抽奖')
     if f.drawnd == False:
-        return HttpResponse(j.questionaire_text + '还未完成抽奖')
+        return HttpResponse( '还未完成抽奖')
 
     f=f.answer_set.all().filter(drawn=True).order_by('answer_drawn')
     template = loader.get_template('polls/drawn.html')
