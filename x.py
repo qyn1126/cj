@@ -6,8 +6,9 @@ python3 manage.py createsuperuser
 python3 manage.py runserver
 Question.objects.all()
 from polls.models import *
-
+import numpy
 __gt 大于
 __gte 大于等于
 __lt 小于
 __lte 小于等于
+STATIC_ROOT='/home/cj/static/'

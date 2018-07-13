@@ -4,6 +4,8 @@ from polls.models import *
 from django.utils import timezone
 import random
 import datetime
+import numpy as np
+
 def index(request,question_id):
     z=question_id
     if timezone.now()<Questionaire.objects.filter(id=question_id)[0].pub_date:
@@ -11,7 +13,7 @@ def index(request,question_id):
     if timezone.now()>Questionaire.objects.filter(id=question_id)[0].end_time:
         return HttpResponse('已经结束')
     f=Questionaire.objects.filter(id=question_id)[0]
-    latest_question_list = f.question_set.all().order_by('-pub_date')[:5]
+    latest_question_list = f.question_set.all().order_by('pub_date')[:5]
     t1 = datetime.datetime.strftime(f.pub_date, '%Y年-%m月-%d日 %H:%M:%S')
     t2 = datetime.datetime.strftime(f.end_time, '%Y年-%m月-%d日 %H:%M:%S')
     template = loader.get_template('polls/index.html')
@@ -26,14 +28,13 @@ def index(request,question_id):
 
 def vote(request):
     aire=request.POST.get('wjid',1)
-    name1 = Questionaire.objects.filter(id=int(aire))[0].question_set.all().order_by('-pub_date')[:5]
+    name1 = Questionaire.objects.filter(id=int(aire))[0].question_set.all().order_by('pub_date')[:5]
     f = request.POST['phone_number']
     if Questionaire.objects.get(id=aire).answer_set.filter(answer_phonenumber=f):
         return HttpResponse('抱歉，您已经答过题了')
     s=''
     q=1
     num=0
-    r = 0
     for i in name1:
         s=s+' '+str(q)+'.'
         q=q+1
@@ -41,34 +42,44 @@ def vote(request):
         if i.sf==True:
             r=0
             for j in i.choice_set.all():
-                if (request.POST.get(str(j.id),1)!=1) :
+                if (request.POST.get('r'+str(j.id),1)!=1) :
                     s = s + j.choice_text[0]
-                    r=r+Choice.objects.filter(id=int(request.POST[str(j.id)]))[0].votes
-                    if r<0:
-                        r=0
+                    if Choice.objects.filter(id=int(request.POST['r'+str(j.id)]))[0].answer==True:
+                        r=r+2
+            if r < 0:
+                r = 0
+            if r < len(i.choice_set.all()):
+                r = 1
+            if r == len(i.choice_set.all()):
+                r = 2
+            num=num+r
         else:
             s = s + Choice.objects.get(id=int(request.POST['r' + str(i.id)])).choice_text[0]
-            num = num + Choice.objects.get(id=int(request.POST['r' + str(i.id)])).votes
+            if Choice.objects.get(id=int(request.POST['r' + str(i.id)])).answer==True:
+                num = num + 2
 
-
-    num=num+r
-    if num>5:
-        num=5
     q = answer(questionaire_id=aire, answer_name=request.POST['firstname'], answer_email=request.POST['email'], answer_number=num, answer_choice=s, answer_phonenumber=f )
     q.save()
 
     return HttpResponse('感谢您的参与')
 
 def rank1(request):
-    a=(int(request.POST['j1']),int(request.POST['j2']),int(request.POST['j3']))
-    c=int(request.POST['j4'])
+    a=int(request.POST['j1'])
     b=request.POST['wjid']
-    o=''
     ans=[]
-
+    FA=think.objects.get(votes=a)
+    FA1=FA.gt_set.all()
+    a = np.array([[0 for i in range(len(FA1))] for i in range(2)])
+    i=0
+    for j in FA1:
+        a[0][i]=j.num
+        a[1][i] = j.votes
+        i=i+1
+    c=a[1]
+    a=a[0]
     for i in b:
         j=Questionaire.objects.get(id=int(i))
-        ranki=j.answer_set.all().filter(answer_number__gte=c)
+        ranki = j.answer_set.all().filter(answer_number__gte=len(FA1)).order_by('answer_number')
         if len(ranki)<sum(a):
             return HttpResponse(j.questionaire_text+'抽奖人数不足')
         if j.drawnd==True:
@@ -77,17 +88,19 @@ def rank1(request):
             return HttpResponse('还没开始')
         if timezone.now() > j.end_time:
             return HttpResponse('已经结束')
+        R = np.array([i.answer_number for i in ranki])
         r=[i for i in range(len(ranki))]
-        random.shuffle(r)
-        z=0
-        zz=0
-        for k in range(len(a)):
-            for l in range(a[z]):
-                ranki[r[zz]].drawn=True
-                ranki[r[zz]].answer_drawn=str(z+1)+'等奖'
-                ranki[r[zz]].save()
-                zz=zz+1
-            z=z+1
+        p=0
+        for i in c:
+            S=np.where(R >= i)[0]
+            random.shuffle(S)
+            S=S[:a[p]]
+            for l in S:
+                R[l]=0
+                ranki[r[l]].drawn = True
+                ranki[r[l]].answer_drawn = FA1[int(p)].name
+                ranki[r[l]].save()
+            p=p+1
         j.drawnd = True
         j.save()
     for i in b:

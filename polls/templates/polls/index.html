@@ -13,41 +13,71 @@
 <body>
 <script>
 var cars=new Array();
-var carss=new Array();
 var i=0;
 var j=0;
+var k=0;
  {% for ques in latest_question_list %}
 
 
      cars[i]={{ ques.id }};
-     carss[i]=1;
-      {% if question.sf %}
-            carss[i]=0;
+          i=i+1;
+      {% if ques.sf %}
+            i=i-1;
+            cars[i]=-1;
+            i=i+1;
+            {% for cho in ques.choice_set.all %}
+                cars[i]={{ cho.id }}
+                i=i+1;
+            {% endfor %}
+            cars[i]=-2;
+            i=i+1;
           {% endif %}
-     i=i+1;
+
 
  {% endfor %}
 
 function checkMyform() {
-
+    var f="第";
+    var num=0;
+    var z=0;
+    var io=0;
+    var ios=0;
     for (var i = 0; i < cars.length; i++) {
+        ios=ios+1;
         j=j+1;
         var rName = "r" + cars[i];
         var rNameStr;
-        if (carss[i]==0) {
-            i = i;
+        if (cars[i]==-1) {
+            z=0;
+            num=i;
+            i=i+1;
+            for (i=i;cars[i]!=-2; i++){
+                var rName = "rr" + cars[i];
+                var cc=document.getElementsByName(rName);
+
+                if (cc[0].checked == true) {
+                z=z+1;
+                }
+
+            }
+            if (z==0){
+                    io=io+1;
+                    f=f+String(ios)+","
+            }
         }
         else {
             rNameStr = "document.myform." + String(rName) + ".value";
-
             rNameStr = eval(rNameStr);
 
             if (!rNameStr) {
-                alert("第" + j + "题还未选择");
-                return false;
+                io=io+1;
+                f=f+String(ios)+","
             }
         }
-
+    }
+    if (io>0){
+            alert(f + "题还未选择");
+                return false;
     }
 }
 
@@ -90,7 +120,7 @@ function checkMyform() {
             <li><a  >{{ question.question_text }}</a></li>
             {% for choice in question.choice_set.all %}
                 {% if question.sf %}
-            <input type="checkbox"  name=r{{ choice.id }} id="choice  {{ forloop.counter }}" value="{{ choice.id }}" />
+            <input type="checkbox"  name=rr{{ choice.id }} id="choice  {{ forloop.counter }}" value="{{ choice.id }}" />
             <label for="choice {{ forloop.counter }}" required>{{ choice.choice_text }}</label><br />
             {% else %}
             <input type="radio"  name=r{{ question.id }} id="choice  {{ forloop.counter }}" value="{{ choice.id }}" />

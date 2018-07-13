@@ -18,6 +18,9 @@ class ChoiceInline(admin.StackedInline):
 class AnswerInline(admin.TabularInline):
     model = answer
     extra = 0
+class GtInline(admin.TabularInline):
+    model = gt
+    extra = 0
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,               {'fields': ['questionaire','question_text','sf']}),
@@ -26,6 +29,9 @@ class QuestionAdmin(admin.ModelAdmin):
     inlines = [ChoiceInline]
 class Answer1(admin.ModelAdmin):
     list_display = ('questionaire','answer_name', 'answer_phonenumber', 'answer_number','answer_choice',)
+class think1(admin.ModelAdmin):
+    inlines = [GtInline]
+
 class aire(admin.ModelAdmin):
     inlines = [AnswerInline]
     #inlines = [QuestionInline]
@@ -42,3 +48,4 @@ admin.site.register(Choice)
 admin.site.register(answer,Answer1)
 admin.site.register(Questionaire,aire)
 admin.site.register(Question,QuestionAdmin)
+admin.site.register(think,think1)
