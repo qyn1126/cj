@@ -5,6 +5,7 @@ from django.utils import timezone
 import random
 import datetime
 def index(request,question_id):
+    z=question_id
     if timezone.now()<Questionaire.objects.filter(id=question_id)[0].pub_date:
         return HttpResponse('还没开始')
     if timezone.now()>Questionaire.objects.filter(id=question_id)[0].end_time:
@@ -19,6 +20,7 @@ def index(request,question_id):
         'f':f,
         't1':t1,
         't2':t2,
+        'z' :z,
     }
     return HttpResponse(template.render(context, request))
 
@@ -45,15 +47,9 @@ def vote(request):
                     if r<0:
                         r=0
         else:
-            if (request.POST.get(str(i.id), 1) != 1):
-                s=s+Choice.objects.get(id=int(request.POST[str(i.id)])).choice_text[0]
-                num=num+Choice.objects.get(id=int(request.POST[str(i.id)])).votes
-            else:
-                template = loader.get_template('polls/dx.html')
-                context = {
-                    'aire': aire,
-                }
-                return HttpResponse(template.render(context, request))
+            s = s + Choice.objects.get(id=int(request.POST['r' + str(i.id)])).choice_text[0]
+            num = num + Choice.objects.get(id=int(request.POST['r' + str(i.id)])).votes
+
 
     num=num+r
     if num>5:

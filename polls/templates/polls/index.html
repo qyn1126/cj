@@ -11,7 +11,47 @@
 </head>
 
 <body>
+<script>
+var cars=new Array();
+var carss=new Array();
+var i=0;
+var j=0;
+ {% for ques in latest_question_list %}
 
+
+     cars[i]={{ ques.id }};
+     carss[i]=1;
+      {% if question.sf %}
+            carss[i]=0;
+          {% endif %}
+     i=i+1;
+
+ {% endfor %}
+
+function checkMyform() {
+
+    for (var i = 0; i < cars.length; i++) {
+        j=j+1;
+        var rName = "r" + cars[i];
+        var rNameStr;
+        if (carss[i]==0) {
+            i = i;
+        }
+        else {
+            rNameStr = "document.myform." + String(rName) + ".value";
+
+            rNameStr = eval(rNameStr);
+
+            if (!rNameStr) {
+                alert("第" + j + "题还未选择");
+                return false;
+            }
+        }
+
+    }
+}
+
+</script>
 <div id="container">
 　<table  height="100%" align="center">
 　　<tr>
@@ -20,25 +60,28 @@
 
    <div class="container">
    <div class="row" >
-      <div class="col-xs-10 col-sm-6 col-md-8  col-md-offset-3 "
+      <div class="col-xs-10 col-sm-6 col-md-8  col-md-offset-2 "
 
          box-shadow: inset 0px 0px 1px #234, inset 0px 0px 0px #244;">
-<div class="text"  style=" font-size:26px; text-align:center" >有奖问答</div><br />
 <ul>
 <p class="lead">试卷名称：{{ f.questionaire_text }}</p>
-<p class="lead">开始时间：{{ t1}}</p>
-<p class="lead">结束时间：{{ t2}}</p>
+<p >开始时间：{{ t1}}</p>
+<p >结束时间：{{ t2}}</p>
+<p class="text-left"  >说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文
+    说明文字说明文字说明文字说明文字字说明文字说明文字说明文字说明文字说明文字说明文字说明文字抽奖地址为<a href="drawn">&lt;抽奖地址&gt;</a>
+</p>
 </ul>
       </div></div></div>
 {% if latest_question_list %}
     <ul>
-<form class="bs-example bs-example-form" action="{% url 'polls:vote'%}" method="post">
+<form class="bs-example bs-example-form" name="myform" action="{% url 'polls:vote'%}" onsubmit="return checkMyform();" method="post">
     {% csrf_token %}
+<ol>
         {% for question in latest_question_list %}
 
 
    <div class="row" >
-      <div class="col-xs-10 col-sm-6 col-md-8  col-md-offset-3 "
+      <div class="col-xs-10 col-sm-6 col-md-8  col-md-offset-2 "
 
          box-shadow: inset 0px 0px 1px #000, inset 0px 0px 0px #000;">
 　   <table class="table table-striped">
@@ -47,10 +90,10 @@
             <li><a  >{{ question.question_text }}</a></li>
             {% for choice in question.choice_set.all %}
                 {% if question.sf %}
-            <input type="checkbox"  name={{ choice.id }} id="choice  {{ forloop.counter }}" value="{{ choice.id }}" />
+            <input type="checkbox"  name=r{{ choice.id }} id="choice  {{ forloop.counter }}" value="{{ choice.id }}" />
             <label for="choice {{ forloop.counter }}" required>{{ choice.choice_text }}</label><br />
             {% else %}
-            <input type="radio"  name={{ question.id }} id="choice  {{ forloop.counter }}" value="{{ choice.id }}" />
+            <input type="radio"  name=r{{ question.id }} id="choice  {{ forloop.counter }}" value="{{ choice.id }}" />
             <label for="choice {{ forloop.counter }}" required>{{ choice.choice_text }}</label><br />
                     <input class="sr-only" type="number" name="wjid" value="{{ question.questionaire.id }}" />
                 {% endif %}
@@ -60,15 +103,18 @@
 　　  </table>
              </div></div>
         {% endfor %}
+</ol>
  <div class="row">
    <div class="container">
    <div class="row" >
-      <div class="col-xs-20 col-sm-10 col-md-8 col-md-offset-3 "
+      <div class="col-xs-20 col-sm-10 col-md-8 col-md-offset-2 "
 
          box-shadow: inset 0px 0px 1px #234, inset 0px 0px 0px #244;">
  <table class="table"  >
 　　      <tr>
 　　      <td>
+     <p class="text-left"  >说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文
+    说明文字说明文字说明文字说明文字字说明文字说明文字说明文字说明文字说明文字说明文字说明文字</p>
     <div class="form-group" style="padding: 10px 0px 50px;">
         <div class="col-xs-6">
         <label for="exampleInputEmail1">姓名</label>
@@ -84,7 +130,7 @@
         <label for="exampleInputEmail1">电话号码</label>
         <input class="form-control" id="private_phone" name="phone_number" pattern="(\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$" placeholder="请输入您的电话号码" required="required" type="text" />
     </div></div>
-     <button type="submit" class="btn btn-default">提交</button>
+     <button type="submit" class="btn btn-default" onsubmit="checkMyform();">提交</button>
       </td>
 　　      </tr>
 　　  </table>

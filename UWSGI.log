@@ -117,3 +117,50 @@ spawned uWSGI http 1 (pid: 2016)
 [pid: 2015|app: 0|req: 3/5] 127.0.0.1 () {38 vars in 844 bytes} [Thu Jul 12 15:20:15 2018] GET /polls/1/ => generated 9708 bytes in 85 msecs (HTTP/1.1 200) 5 headers in 278 bytes (3 switches on core 0)
 [pid: 2015|app: 0|req: 4/6] 127.0.0.1 () {28 vars in 321 bytes} [Thu Jul 12 15:20:27 2018] GET /polls/1 => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 114 bytes (2 switches on core 0)
 [pid: 2015|app: 0|req: 5/7] 127.0.0.1 () {28 vars in 319 bytes} [Thu Jul 12 15:20:31 2018] GET /polls/ => generated 80 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (2 switches on core 0)
+gateway "uWSGI http 1" has been buried (pid: 2016)
+...brutally killing workers...
+worker 4 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /Users/adnun/cj
+closing all non-uwsgi socket fds > 2 (max_fd = 2560)...
+found fd 6 mapped to socket 0 (/Users/adnun/cj/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from fff.ini
+[uwsgi-static] added mapping for /statics => /Users/adnun/cj/static
+*** Starting uWSGI 2.0.17 (64bit) on [Thu Jul 12 17:16:19 2018] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2) on 02 July 2018 06:26:33
+os: Darwin-17.6.0 Darwin Kernel Version 17.6.0: Tue May  8 15:22:16 PDT 2018; root:xnu-4570.61.1~1/RELEASE_X86_64
+nodename: AsminmatoMacBook-Air.local
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /Users/adnun/cj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /Users/adnun/cj/
+your processes number limit is 709
+your memory page size is 4096 bytes
+detected max file descriptor number: 2560
+building mime-types dictionary from file /etc/apache2/mime.types...1003 entry found
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8009 fd 3
+uwsgi socket 0 bound to UNIX address /Users/adnun/cj/uwsgi.sock fd 6
+Python version: 3.6.5 (default, Jun 17 2018, 12:13:06)  [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f9f31033c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 364440 bytes (355 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7f9f31033c00 pid: 2011 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 2011)
+spawned uWSGI worker 1 (pid: 2450, cores: 1)
+spawned uWSGI worker 2 (pid: 2451, cores: 1)
+spawned uWSGI worker 3 (pid: 2452, cores: 1)
+spawned uWSGI worker 4 (pid: 2453, cores: 1)
+spawned uWSGI http 1 (pid: 2454)
