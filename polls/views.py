@@ -80,7 +80,7 @@ def rank1(request):
     a=a[0]
     for i in b:
         j=Questionaire.objects.get(id=int(i))
-        ranki = j.answer_set.all().filter(answer_number__gte=len(FA1)).order_by('answer_number')
+        ranki = j.answer_set.all().filter(answer_number__gte=FA1[len(FA1)-1].votes).order_by('answer_number')
         if len(ranki)<sum(a):
             return HttpResponse(j.questionaire_text+'抽奖人数不足')
         if j.drawnd==True:
