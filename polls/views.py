@@ -54,9 +54,10 @@ def vote(request):
                 r = 2
             num=num+r
         else:
-            s = s + Choice.objects.get(id=int(request.POST['r' + str(i.id)])).choice_text[0]
-            if Choice.objects.get(id=int(request.POST['r' + str(i.id)])).answer==True:
-                num = num + 2
+            if (request.POST.get('r'+str(i.id), 1) != 1):
+                s = s + Choice.objects.get(id=int(request.POST['r' + str(i.id)])).choice_text[0]
+                if Choice.objects.get(id=int(request.POST['r' + str(i.id)])).answer==True:
+                    num = num + 2
 
     q = answer(questionaire_id=aire, answer_name=request.POST['firstname'], answer_email=request.POST['email'], answer_number=num, answer_choice=s, answer_phonenumber=f )
     q.save()

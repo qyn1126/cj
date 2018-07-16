@@ -164,3 +164,398 @@ spawned uWSGI worker 2 (pid: 2451, cores: 1)
 spawned uWSGI worker 3 (pid: 2452, cores: 1)
 spawned uWSGI worker 4 (pid: 2453, cores: 1)
 spawned uWSGI http 1 (pid: 2454)
+*** Starting uWSGI 2.0.17 (64bit) on [Mon Jul 16 08:48:59 2018] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2) on 02 July 2018 06:26:33
+os: Darwin-17.6.0 Darwin Kernel Version 17.6.0: Tue May  8 15:22:16 PDT 2018; root:xnu-4570.61.1~1/RELEASE_X86_64
+nodename: AsminmatoMacBook-Air.local
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /Users/adnun/cj
+writing pidfile to pid.uwsgi
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /Users/adnun/cj/
+your processes number limit is 709
+your memory page size is 4096 bytes
+detected max file descriptor number: 256
+building mime-types dictionary from file /etc/apache2/mime.types...1003 entry found
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8009 fd 3
+uwsgi socket 0 bound to UNIX address /Users/adnun/cj/uwsgi.sock fd 6
+Python version: 3.6.5 (default, Jun 17 2018, 12:13:06)  [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7fc63a839a00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 364440 bytes (355 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7fc63a839a00 pid: 782 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 782)
+spawned uWSGI worker 1 (pid: 783, cores: 1)
+spawned uWSGI worker 2 (pid: 784, cores: 1)
+spawned uWSGI worker 3 (pid: 785, cores: 1)
+spawned uWSGI worker 4 (pid: 786, cores: 1)
+spawned uWSGI http 1 (pid: 787)
+[pid: 785|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 787 bytes} [Mon Jul 16 08:49:16 2018] GET /admin/ => generated 8181 bytes in 338 msecs (HTTP/1.1 200) 6 headers in 227 bytes (2 switches on core 0)
+Not Found: /static/admin/css/base.css
+[pid: 785|app: 0|req: 2/2] 127.0.0.1 () {40 vars in 822 bytes} [Mon Jul 16 08:49:16 2018] GET /static/admin/css/base.css => generated 2116 bytes in 12 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /static/admin/css/responsive.css
+[pid: 784|app: 0|req: 1/3] 127.0.0.1 () {40 vars in 834 bytes} [Mon Jul 16 08:49:16 2018] GET /static/admin/css/responsive.css => generated 2134 bytes in 218 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /static/admin/css/dashboard.css
+[pid: 786|app: 0|req: 1/4] 127.0.0.1 () {40 vars in 832 bytes} [Mon Jul 16 08:49:16 2018] GET /static/admin/css/dashboard.css => generated 2131 bytes in 229 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 785|app: 0|req: 3/5] 127.0.0.1 () {38 vars in 760 bytes} [Mon Jul 16 08:49:16 2018] GET /favicon.ico => generated 2074 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 785|app: 0|req: 4/6] 127.0.0.1 () {40 vars in 818 bytes} [Mon Jul 16 08:52:18 2018] GET /admin/ => generated 8181 bytes in 35 msecs (HTTP/1.1 200) 6 headers in 227 bytes (3 switches on core 0)
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/dashboard.css
+[pid: 785|app: 0|req: 5/7] 127.0.0.1 () {38 vars in 779 bytes} [Mon Jul 16 08:52:19 2018] GET /static/admin/css/responsive.css => generated 2134 bytes in 8 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+Not Found: /static/admin/css/base.css
+[pid: 784|app: 0|req: 2/8] 127.0.0.1 () {38 vars in 777 bytes} [Mon Jul 16 08:52:19 2018] GET /static/admin/css/dashboard.css => generated 2131 bytes in 9 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 786|app: 0|req: 2/9] 127.0.0.1 () {38 vars in 767 bytes} [Mon Jul 16 08:52:19 2018] GET /static/admin/css/base.css => generated 2116 bytes in 10 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 785|app: 0|req: 6/10] 127.0.0.1 () {40 vars in 818 bytes} [Mon Jul 16 08:52:20 2018] GET /admin/ => generated 8181 bytes in 33 msecs (HTTP/1.1 200) 6 headers in 227 bytes (3 switches on core 0)
+Not Found: /static/admin/css/dashboard.css
+[pid: 786|app: 0|req: 3/11] 127.0.0.1 () {38 vars in 777 bytes} [Mon Jul 16 08:52:20 2018] GET /static/admin/css/dashboard.css => generated 2131 bytes in 8 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/base.css
+[pid: 784|app: 0|req: 3/13] 127.0.0.1 () {38 vars in 779 bytes} [Mon Jul 16 08:52:20 2018] GET /static/admin/css/responsive.css => generated 2134 bytes in 9 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 785|app: 0|req: 7/13] 127.0.0.1 () {38 vars in 767 bytes} [Mon Jul 16 08:52:20 2018] GET /static/admin/css/base.css => generated 2116 bytes in 10 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.17 (64bit) on [Mon Jul 16 08:52:52 2018] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2) on 02 July 2018 06:26:33
+os: Darwin-17.6.0 Darwin Kernel Version 17.6.0: Tue May  8 15:22:16 PDT 2018; root:xnu-4570.61.1~1/RELEASE_X86_64
+nodename: AsminmatoMacBook-Air.local
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /Users/adnun/cj
+writing pidfile to pid.uwsgi
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /Users/adnun/cj/
+your processes number limit is 709
+your memory page size is 4096 bytes
+detected max file descriptor number: 256
+building mime-types dictionary from file /etc/apache2/mime.types...1003 entry found
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8009).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 785|app: 0|req: 8/14] 127.0.0.1 () {40 vars in 818 bytes} [Mon Jul 16 08:52:54 2018] GET /admin/ => generated 8181 bytes in 34 msecs (HTTP/1.1 200) 6 headers in 227 bytes (3 switches on core 0)
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/base.css
+[pid: 784|app: 0|req: 4/16] 127.0.0.1 () {38 vars in 779 bytes} [Mon Jul 16 08:52:54 2018] GET /static/admin/css/responsive.css => generated 2134 bytes in 8 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 786|app: 0|req: 4/17] 127.0.0.1 () {38 vars in 777 bytes} [Mon Jul 16 08:52:54 2018] GET /static/admin/css/dashboard.css => generated 2131 bytes in 7 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 785|app: 0|req: 9/17] 127.0.0.1 () {38 vars in 767 bytes} [Mon Jul 16 08:52:54 2018] GET /static/admin/css/base.css => generated 2116 bytes in 9 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 785|app: 0|req: 10/18] 127.0.0.1 () {40 vars in 818 bytes} [Mon Jul 16 08:53:08 2018] GET /admin/ => generated 8181 bytes in 31 msecs (HTTP/1.1 200) 6 headers in 227 bytes (3 switches on core 0)
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/responsive.css
+[pid: 785|app: 0|req: 11/20] 127.0.0.1 () {38 vars in 767 bytes} [Mon Jul 16 08:53:08 2018] GET /static/admin/css/base.css => generated 2116 bytes in 7 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 784|app: 0|req: 5/20] 127.0.0.1 () {38 vars in 779 bytes} [Mon Jul 16 08:53:08 2018] GET /static/admin/css/responsive.css => generated 2134 bytes in 7 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+Not Found: /static/admin/css/dashboard.css
+[pid: 786|app: 0|req: 5/21] 127.0.0.1 () {38 vars in 777 bytes} [Mon Jul 16 08:53:08 2018] GET /static/admin/css/dashboard.css => generated 2131 bytes in 9 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+gateway "uWSGI http 1" has been buried (pid: 787)
+...brutally killing workers...
+worker 4 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /Users/adnun/cj
+closing all non-uwsgi socket fds > 2 (max_fd = 256)...
+found fd 6 mapped to socket 0 (/Users/adnun/cj/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /Users/adnun/cj/fff.ini
+[uwsgi-static] added mapping for /statics => /Users/adnun/cj/polls/static
+*** Starting uWSGI 2.0.17 (64bit) on [Mon Jul 16 08:53:15 2018] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2) on 02 July 2018 06:26:33
+os: Darwin-17.6.0 Darwin Kernel Version 17.6.0: Tue May  8 15:22:16 PDT 2018; root:xnu-4570.61.1~1/RELEASE_X86_64
+nodename: AsminmatoMacBook-Air.local
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /Users/adnun/cj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /Users/adnun/cj/
+your processes number limit is 709
+your memory page size is 4096 bytes
+detected max file descriptor number: 256
+building mime-types dictionary from file /etc/apache2/mime.types...1003 entry found
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8009 fd 3
+uwsgi socket 0 bound to UNIX address /Users/adnun/cj/uwsgi.sock fd 6
+Python version: 3.6.5 (default, Jun 17 2018, 12:13:06)  [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7fc828005800
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 364440 bytes (355 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7fc828005800 pid: 782 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 782)
+spawned uWSGI worker 1 (pid: 836, cores: 1)
+spawned uWSGI worker 2 (pid: 837, cores: 1)
+spawned uWSGI worker 3 (pid: 838, cores: 1)
+spawned uWSGI worker 4 (pid: 839, cores: 1)
+spawned uWSGI http 1 (pid: 840)
+[pid: 837|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 818 bytes} [Mon Jul 16 08:53:16 2018] GET /admin/ => generated 8181 bytes in 358 msecs (HTTP/1.1 200) 6 headers in 227 bytes (3 switches on core 0)
+Not Found: /static/admin/css/base.css
+[pid: 837|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 767 bytes} [Mon Jul 16 08:53:17 2018] GET /static/admin/css/base.css => generated 2116 bytes in 19 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+Not Found: /static/admin/css/dashboard.css
+[pid: 839|app: 0|req: 1/3] 127.0.0.1 () {38 vars in 777 bytes} [Mon Jul 16 08:53:17 2018] GET /static/admin/css/dashboard.css => generated 2131 bytes in 213 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+Not Found: /static/admin/css/responsive.css
+[pid: 838|app: 0|req: 1/4] 127.0.0.1 () {38 vars in 777 bytes} [Mon Jul 16 08:53:17 2018] GET /static/admin/css/responsive.css => generated 2134 bytes in 221 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 837|app: 0|req: 3/5] 127.0.0.1 () {38 vars in 789 bytes} [Mon Jul 16 08:53:21 2018] GET /polls/1/ => generated 12800 bytes in 28 msecs (HTTP/1.1 200) 5 headers in 279 bytes (4 switches on core 0)
+[pid: 837|app: 0|req: 4/6] 127.0.0.1 () {38 vars in 786 bytes} [Mon Jul 16 08:53:36 2018] GET /admin/ => generated 8181 bytes in 63 msecs (HTTP/1.1 200) 6 headers in 227 bytes (3 switches on core 0)
+Not Found: /static/admin/css/dashboard.css
+[pid: 839|app: 0|req: 2/7] 127.0.0.1 () {38 vars in 776 bytes} [Mon Jul 16 08:53:36 2018] GET /static/admin/css/dashboard.css => generated 2131 bytes in 10 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+Not Found: /static/admin/css/base.css
+[pid: 838|app: 0|req: 2/8] 127.0.0.1 () {38 vars in 766 bytes} [Mon Jul 16 08:53:36 2018] GET /static/admin/css/base.css => generated 2116 bytes in 11 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+Not Found: /static/admin/css/responsive.css
+[pid: 836|app: 0|req: 1/9] 127.0.0.1 () {38 vars in 778 bytes} [Mon Jul 16 08:53:36 2018] GET /static/admin/css/responsive.css => generated 2134 bytes in 323 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+gateway "uWSGI http 1" has been buried (pid: 840)
+...brutally killing workers...
+worker 4 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /Users/adnun/cj
+closing all non-uwsgi socket fds > 2 (max_fd = 256)...
+found fd 6 mapped to socket 0 (/Users/adnun/cj/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /Users/adnun/cj/fff.ini
+[uwsgi-static] added mapping for /statics => /Users/adnun/cj/polls/static
+*** Starting uWSGI 2.0.17 (64bit) on [Mon Jul 16 08:53:41 2018] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2) on 02 July 2018 06:26:33
+os: Darwin-17.6.0 Darwin Kernel Version 17.6.0: Tue May  8 15:22:16 PDT 2018; root:xnu-4570.61.1~1/RELEASE_X86_64
+nodename: AsminmatoMacBook-Air.local
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /Users/adnun/cj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /Users/adnun/cj/
+your processes number limit is 709
+your memory page size is 4096 bytes
+detected max file descriptor number: 256
+building mime-types dictionary from file /etc/apache2/mime.types...1003 entry found
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8009 fd 3
+uwsgi socket 0 bound to UNIX address /Users/adnun/cj/uwsgi.sock fd 6
+Python version: 3.6.5 (default, Jun 17 2018, 12:13:06)  [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f97a102b600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 364440 bytes (355 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x7f97a102b600 pid: 782 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 782)
+spawned uWSGI worker 1 (pid: 877, cores: 1)
+spawned uWSGI worker 2 (pid: 878, cores: 1)
+spawned uWSGI worker 3 (pid: 879, cores: 1)
+spawned uWSGI worker 4 (pid: 880, cores: 1)
+spawned uWSGI http 1 (pid: 881)
+[pid: 880|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 787 bytes} [Mon Jul 16 08:57:25 2018] GET /admin/ => generated 8181 bytes in 454 msecs (HTTP/1.1 200) 6 headers in 227 bytes (2 switches on core 0)
+Not Found: /static/admin/css/base.css
+[pid: 880|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 767 bytes} [Mon Jul 16 08:57:25 2018] GET /static/admin/css/base.css => generated 2116 bytes in 15 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /static/admin/css/responsive.css
+[pid: 878|app: 0|req: 1/3] 127.0.0.1 () {38 vars in 779 bytes} [Mon Jul 16 08:57:25 2018] GET /static/admin/css/responsive.css => generated 2134 bytes in 254 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /static/admin/css/dashboard.css
+[pid: 879|app: 0|req: 1/4] 127.0.0.1 () {38 vars in 777 bytes} [Mon Jul 16 08:57:25 2018] GET /static/admin/css/dashboard.css => generated 2131 bytes in 261 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 879|app: 0|req: 2/5] 127.0.0.1 () {40 vars in 818 bytes} [Mon Jul 16 08:58:01 2018] GET /admin/ => generated 8181 bytes in 182 msecs (HTTP/1.1 200) 6 headers in 227 bytes (3 switches on core 0)
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dashboard.css
+[pid: 880|app: 0|req: 3/7] 127.0.0.1 () {38 vars in 767 bytes} [Mon Jul 16 08:58:01 2018] GET /static/admin/css/base.css => generated 2116 bytes in 8 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 878|app: 0|req: 2/7] 127.0.0.1 () {38 vars in 777 bytes} [Mon Jul 16 08:58:01 2018] GET /static/admin/css/dashboard.css => generated 2131 bytes in 9 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+Not Found: /static/admin/css/responsive.css
+[pid: 877|app: 0|req: 1/8] 127.0.0.1 () {38 vars in 779 bytes} [Mon Jul 16 08:58:01 2018] GET /static/admin/css/responsive.css => generated 2134 bytes in 286 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+gateway "uWSGI http 1" has been buried (pid: 881)
+...brutally killing workers...
+worker 4 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /Users/adnun/cj
+closing all non-uwsgi socket fds > 2 (max_fd = 256)...
+found fd 6 mapped to socket 0 (/Users/adnun/cj/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /Users/adnun/cj/fff.ini
+[uwsgi-static] added mapping for /statics => /Users/adnun/cj/polls/static
+*** Starting uWSGI 2.0.17 (64bit) on [Mon Jul 16 09:03:25 2018] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2) on 02 July 2018 06:26:33
+os: Darwin-17.6.0 Darwin Kernel Version 17.6.0: Tue May  8 15:22:16 PDT 2018; root:xnu-4570.61.1~1/RELEASE_X86_64
+nodename: AsminmatoMacBook-Air.local
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /Users/adnun/cj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /Users/adnun/cj/
+your processes number limit is 709
+your memory page size is 4096 bytes
+detected max file descriptor number: 256
+building mime-types dictionary from file /etc/apache2/mime.types...1003 entry found
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8009 fd 3
+uwsgi socket 0 bound to UNIX address /Users/adnun/cj/uwsgi.sock fd 6
+Python version: 3.6.5 (default, Jun 17 2018, 12:13:06)  [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f8b8082a200
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 364440 bytes (355 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7f8b8082a200 pid: 782 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 782)
+spawned uWSGI worker 1 (pid: 962, cores: 1)
+spawned uWSGI worker 2 (pid: 963, cores: 1)
+spawned uWSGI worker 3 (pid: 964, cores: 1)
+spawned uWSGI worker 4 (pid: 965, cores: 1)
+*** Stats server enabled on /Users/adnun/uwsgi/uwsgi.status fd: 18 ***
+spawned uWSGI http 1 (pid: 966)
+[pid: 965|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 787 bytes} [Mon Jul 16 09:03:31 2018] GET /admin/ => generated 8181 bytes in 1200 msecs (HTTP/1.1 200) 6 headers in 227 bytes (3 switches on core 0)
+[pid: 965|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 787 bytes} [Mon Jul 16 09:03:33 2018] GET /admin/ => generated 8181 bytes in 69 msecs (HTTP/1.1 200) 6 headers in 227 bytes (3 switches on core 0)
+Not Found: /static/admin/css/responsive.css
+[pid: 962|app: 0|req: 1/3] 127.0.0.1 () {38 vars in 779 bytes} [Mon Jul 16 09:03:33 2018] GET /static/admin/css/responsive.css => generated 2134 bytes in 385 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+Not Found: /static/admin/css/dashboard.css
+[pid: 963|app: 0|req: 1/4] 127.0.0.1 () {38 vars in 777 bytes} [Mon Jul 16 09:03:33 2018] GET /static/admin/css/dashboard.css => generated 2131 bytes in 390 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+Not Found: /static/admin/css/base.css
+[pid: 964|app: 0|req: 1/5] 127.0.0.1 () {38 vars in 767 bytes} [Mon Jul 16 09:03:33 2018] GET /static/admin/css/base.css => generated 2116 bytes in 395 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+gateway "uWSGI http 1" has been buried (pid: 966)
+...brutally killing workers...
+worker 4 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /Users/adnun/cj
+closing all non-uwsgi socket fds > 2 (max_fd = 256)...
+found fd 6 mapped to socket 0 (/Users/adnun/cj/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /Users/adnun/cj/fff.ini
+[uwsgi-static] added mapping for /statics => /Users/adnun/cj/polls/static
+*** Starting uWSGI 2.0.17 (64bit) on [Mon Jul 16 09:03:38 2018] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2) on 02 July 2018 06:26:33
+os: Darwin-17.6.0 Darwin Kernel Version 17.6.0: Tue May  8 15:22:16 PDT 2018; root:xnu-4570.61.1~1/RELEASE_X86_64
+nodename: AsminmatoMacBook-Air.local
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /Users/adnun/cj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /Users/adnun/cj/
+your processes number limit is 709
+your memory page size is 4096 bytes
+detected max file descriptor number: 256
+building mime-types dictionary from file /etc/apache2/mime.types...1003 entry found
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8009 fd 3
+uwsgi socket 0 bound to UNIX address /Users/adnun/cj/uwsgi.sock fd 6
+Python version: 3.6.5 (default, Jun 17 2018, 12:13:06)  [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7fee4b039200
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 364440 bytes (355 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7fee4b039200 pid: 782 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 782)
+spawned uWSGI worker 1 (pid: 995, cores: 1)
+spawned uWSGI worker 2 (pid: 996, cores: 1)
+spawned uWSGI worker 3 (pid: 997, cores: 1)
+spawned uWSGI worker 4 (pid: 998, cores: 1)
+*** Stats server enabled on /Users/adnun/uwsgi/uwsgi.status fd: 18 ***
+spawned uWSGI http 1 (pid: 999)
+[pid: 995|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 818 bytes} [Mon Jul 16 09:03:40 2018] GET /admin/ => generated 8181 bytes in 325 msecs (HTTP/1.1 200) 6 headers in 227 bytes (3 switches on core 0)
+Not Found: /static/admin/css/dashboard.css
+[pid: 998|app: 0|req: 1/2] 127.0.0.1 () {38 vars in 777 bytes} [Mon Jul 16 09:03:40 2018] GET /static/admin/css/dashboard.css => generated 2131 bytes in 268 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+Not Found: /static/admin/css/responsive.css
+[pid: 996|app: 0|req: 1/3] 127.0.0.1 () {38 vars in 779 bytes} [Mon Jul 16 09:03:40 2018] GET /static/admin/css/responsive.css => generated 2134 bytes in 271 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+Not Found: /static/admin/css/base.css
+[pid: 997|app: 0|req: 1/4] 127.0.0.1 () {38 vars in 767 bytes} [Mon Jul 16 09:03:40 2018] GET /static/admin/css/base.css => generated 2116 bytes in 276 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 998|app: 0|req: 2/5] 127.0.0.1 () {40 vars in 818 bytes} [Mon Jul 16 09:04:42 2018] GET /admin/ => generated 8181 bytes in 166 msecs (HTTP/1.1 200) 6 headers in 227 bytes (3 switches on core 0)
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/css/responsive.css
+[pid: 996|app: 0|req: 2/8] 127.0.0.1 () {38 vars in 777 bytes} [Mon Jul 16 09:04:42 2018] GET /static/admin/css/dashboard.css => generated 2131 bytes in 13 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 995|app: 0|req: 2/8] 127.0.0.1 () {38 vars in 779 bytes} [Mon Jul 16 09:04:42 2018] GET /static/admin/css/responsive.css => generated 2134 bytes in 13 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 997|app: 0|req: 2/6] 127.0.0.1 () {38 vars in 767 bytes} [Mon Jul 16 09:04:42 2018] GET /static/admin/css/base.css => generated 2116 bytes in 12 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 998|app: 0|req: 3/9] 127.0.0.1 () {38 vars in 846 bytes} [Mon Jul 16 09:05:59 2018] GET /polls/1/ => generated 12800 bytes in 29 msecs (HTTP/1.1 200) 5 headers in 279 bytes (4 switches on core 0)
+Not Found: /favicon.ico
+[pid: 997|app: 0|req: 3/10] 127.0.0.1 () {38 vars in 817 bytes} [Mon Jul 16 09:05:59 2018] GET /favicon.ico => generated 2074 bytes in 7 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 998|app: 0|req: 4/11] 127.0.0.1 () {38 vars in 840 bytes} [Mon Jul 16 09:06:07 2018] GET /admin => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 112 bytes (2 switches on core 0)
+[pid: 998|app: 0|req: 5/12] 127.0.0.1 () {38 vars in 842 bytes} [Mon Jul 16 09:06:07 2018] GET /admin/ => generated 0 bytes in 519 msecs (HTTP/1.1 302) 7 headers in 336 bytes (2 switches on core 0)
+[pid: 997|app: 0|req: 4/13] 127.0.0.1 () {38 vars in 835 bytes} [Mon Jul 16 09:06:08 2018] GET /admin/login/?next=/admin/ => generated 1844 bytes in 154 msecs (HTTP/1.1 200) 7 headers in 381 bytes (2 switches on core 0)
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/login.css
+[pid: 997|app: 0|req: 5/14] 127.0.0.1 () {38 vars in 799 bytes} [Mon Jul 16 09:06:08 2018] GET /static/admin/css/login.css => generated 2119 bytes in 12 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 998|app: 0|req: 6/15] 127.0.0.1 () {38 vars in 797 bytes} [Mon Jul 16 09:06:08 2018] GET /static/admin/css/base.css => generated 2116 bytes in 13 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+Not Found: /static/admin/css/responsive.css
+[pid: 995|app: 0|req: 3/16] 127.0.0.1 () {38 vars in 809 bytes} [Mon Jul 16 09:06:08 2018] GET /static/admin/css/responsive.css => generated 2134 bytes in 17 msecs (HTTP/1.1 404) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 998|app: 0|req: 7/17] 127.0.0.1 () {38 vars in 802 bytes} [Mon Jul 16 09:06:10 2018] GET /polls/1/ => generated 12800 bytes in 21 msecs (HTTP/1.1 200) 5 headers in 279 bytes (4 switches on core 0)
+[pid: 998|app: 0|req: 8/18] 127.0.0.1 () {40 vars in 833 bytes} [Mon Jul 16 09:06:40 2018] GET /polls/1/ => generated 12800 bytes in 25 msecs (HTTP/1.1 200) 5 headers in 279 bytes (4 switches on core 0)
+gateway "uWSGI http 1" has been buried (pid: 999)
+...brutally killing workers...
+worker 4 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /Users/adnun/cj
+closing all non-uwsgi socket fds > 2 (max_fd = 256)...
+found fd 6 mapped to socket 0 (/Users/adnun/cj/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /Users/adnun/cj/fff.ini
+[uwsgi-static] added mapping for /static => /Users/adnun/cj/polls/static
+*** Starting uWSGI 2.0.17 (64bit) on [Mon Jul 16 09:06:49 2018] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2) on 02 July 2018 06:26:33
+os: Darwin-17.6.0 Darwin Kernel Version 17.6.0: Tue May  8 15:22:16 PDT 2018; root:xnu-4570.61.1~1/RELEASE_X86_64
+nodename: AsminmatoMacBook-Air.local
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /Users/adnun/cj
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /Users/adnun/cj/
+your processes number limit is 709
+your memory page size is 4096 bytes
+detected max file descriptor number: 256
+building mime-types dictionary from file /etc/apache2/mime.types...1003 entry found
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8009 fd 3
+uwsgi socket 0 bound to UNIX address /Users/adnun/cj/uwsgi.sock fd 6
+Python version: 3.6.5 (default, Jun 17 2018, 12:13:06)  [GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.2)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f940282b400
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 364440 bytes (355 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f940282b400 pid: 782 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 782)
+spawned uWSGI worker 1 (pid: 1040, cores: 1)
+spawned uWSGI worker 2 (pid: 1041, cores: 1)
+spawned uWSGI worker 3 (pid: 1042, cores: 1)
+spawned uWSGI worker 4 (pid: 1043, cores: 1)
+*** Stats server enabled on /Users/adnun/uwsgi/uwsgi.status fd: 18 ***
+spawned uWSGI http 1 (pid: 1044)

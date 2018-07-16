@@ -3,6 +3,7 @@ from django.utils import timezone
 import datetime
 class Questionaire(models.Model):
     questionaire_text = models.CharField('问卷名称',max_length=200)
+    questionaire_ad = models.TextField('问卷简介',default='')
     pub_date = models.DateTimeField('开始时间',default=timezone.now,)
     end_time = models.DateTimeField('结束时间',default=timezone.now()+datetime.timedelta(days=10))
     questionaire_uid= models.BigIntegerField('序号',default=0)

@@ -37,7 +37,7 @@ class aire(admin.ModelAdmin):
     #inlines = [QuestionInline]
     fieldsets = (
         ['Main', {
-            'fields': ('questionaire_text', 'questionaire_uid','drawnd'),
+            'fields': ('questionaire_text', 'questionaire_uid','questionaire_ad','drawnd'),
         }],
         ['Time', {
              'fields': ('pub_date', 'end_time')
